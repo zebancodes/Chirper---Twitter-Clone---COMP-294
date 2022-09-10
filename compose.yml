@@ -1,0 +1,17 @@
+services:
+  api:
+    image: chirper-api:latest
+    # Add commands?
+    ports:
+      - "8000:5000"
+    working_dir: /api
+    # Add env variables?
+    volumes:
+      - chirper-data:/api/data
+  web:
+    image: chirper-web:latest
+    ports:
+      - "8080:80"
+
+volumes:
+  chirper-data:
